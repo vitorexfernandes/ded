@@ -48,9 +48,9 @@ public class CharacterController : ControllerBase
     //GET METHODS
     //********************************************
     [HttpGet("GetAllSkills")]
-    public IEnumerable<CharacterSkill> GetAllSkills()
+    public IEnumerable<CharacterSkill> GetAllSkills([FromQuery]int skip = 0, [FromQuery] int take = 10)
     {
-        return _classskill;
+        return _classskill.Skip(skip).Take(take);
     }
     [HttpGet("GetSkillsById{Id}")]
     public CharacterSkill? GetSkillsById(int Id)
