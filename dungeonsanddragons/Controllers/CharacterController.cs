@@ -53,8 +53,10 @@ public class CharacterController : ControllerBase
         return _classskill.Skip(skip).Take(take);
     }
     [HttpGet("GetSkillsById{Id}")]
-    public CharacterSkill? GetSkillsById(int Id)
+    public IActionResult GetSkillsById(int Id)
     {
-        return _classskill.FirstOrDefault(skill => skill.Id == Id);
+        var skillReturn = _classskill.FirstOrDefault(skill => skill.Id == Id);
+        if (skillReturn == null) return NotFound();
+        return Ok(skillReturn);
     }
 }
