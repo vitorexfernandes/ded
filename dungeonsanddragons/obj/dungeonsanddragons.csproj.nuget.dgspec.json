@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\D&D\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj": {}
+    "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\Projetos\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\D&D\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj": {
+    "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\Projetos\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\D&D\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj",
+        "projectUniqueName": "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\Projetos\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj",
         "projectName": "dungeonsanddragons",
-        "projectPath": "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\D&D\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj",
+        "projectPath": "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\Projetos\\ded\\dungeonsanddragons\\dungeonsanddragons.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\D&D\\ded\\dungeonsanddragons\\obj\\",
+        "outputPath": "C:\\Users\\vitor\\OneDrive\\Documentos\\Vthor\\Projetos\\ded\\dungeonsanddragons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
