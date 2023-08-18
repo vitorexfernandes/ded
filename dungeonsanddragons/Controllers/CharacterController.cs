@@ -32,17 +32,11 @@ public class CharacterController : ControllerBase
 
     }
     [HttpPost("CreateSkills")]
-    public void CreateSkills([FromBody] IEnumerable<CharacterSkill> skills)
+    public IActionResult CreateSkill([FromBody] CharacterSkill skill)
     {
-        foreach (var skill in skills)
-        {
             skill.Id = SkillId++;
             _classskill.Add(skill);
-            Console.WriteLine("ID=" + skill.Id);
-            Console.WriteLine(skill.Name);
-            Console.WriteLine("Valor=" + skill.Value);
-
-        }
+            return CreatedAtAction(nameof(GetSkillsById),new{id = skill.Id},skill);
     }
 
     //GET METHODS
@@ -52,6 +46,7 @@ public class CharacterController : ControllerBase
     {
         return _classskill.Skip(skip).Take(take);
     }
+
     [HttpGet("GetSkillsById{Id}")]
     public IActionResult GetSkillsById(int Id)
     {
