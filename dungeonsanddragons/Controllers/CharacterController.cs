@@ -9,6 +9,7 @@ namespace dungeonsanddragons.Controllers;
 public class CharacterController : ControllerBase
 {
     private static List<Character> _characterList = new List<Character>();
+    private static int SkillId = 0;
     private static List<CharacterClass> _classList = new List<CharacterClass>();
     private static List<CharacterSkill> _classskill = new List<CharacterSkill>();
 
@@ -31,10 +32,11 @@ public class CharacterController : ControllerBase
 
     }
     [HttpPost("CreateSkills")]
-    public void CreateSkills([FromBody] List<CharacterSkill> skills)
+    public void CreateSkills([FromBody] IEnumerable<CharacterSkill> skills)
     {
         foreach (var skill in skills)
         {
+            skill.Id = SkillId++;
             _classskill.Add(skill);
             Console.WriteLine("ID=" + skill.Id);
             Console.WriteLine(skill.Name);
@@ -46,8 +48,13 @@ public class CharacterController : ControllerBase
     //GET METHODS
     //********************************************
     [HttpGet("GetAllSkills")]
-    public List<CharacterSkill> GetAllSkills()
+    public IEnumerable<CharacterSkill> GetAllSkills()
     {
         return _classskill;
+    }
+    [HttpGet("GetSkillsById{Id}")]
+    public CharacterSkill? GetSkillsById(int Id)
+    {
+        return _classskill.FirstOrDefault(skill => skill.Id == Id);
     }
 }
