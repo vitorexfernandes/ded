@@ -11,7 +11,7 @@ namespace dungeonsanddragons.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Skills",
+                name: "CharacterSkills",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -30,7 +30,7 @@ namespace dungeonsanddragons.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Skills");
+                name: "CharacterSkills");
         }
     }
 }
