@@ -31,7 +31,7 @@ public class CharacterController : ControllerBase
         Console.WriteLine(Classes.Name);
 
     }
-    [HttpPost("CreateSkills")]
+    [HttpPost("CreateSkill")]
     public IActionResult CreateSkill([FromBody] CharacterSkill skill)
     {
             skill.Id = SkillId++;

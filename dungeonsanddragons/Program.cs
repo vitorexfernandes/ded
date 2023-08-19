@@ -1,5 +1,13 @@
+using dungeonsanddragons.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<SkillContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("CharacterConnection"));
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
