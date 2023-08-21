@@ -5,6 +5,7 @@ namespace dungeonsanddragons.Models
     public class CharacterSkill
     {
         //Skill Atributes
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Skill Name is required")]

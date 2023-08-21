@@ -6,7 +6,7 @@ namespace dungeonsanddragons.Data
 {
     public class SkillContext : DbContext
     {
-        public DbSet<CharacterSkill> Skills{ get; set; }
+        public DbSet<CharacterSkill> CharacterSkills{ get; set; }
 
         public SkillContext(DbContextOptions<SkillContext> opts)
             : base(opts)
