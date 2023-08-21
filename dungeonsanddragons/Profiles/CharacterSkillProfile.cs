@@ -11,6 +11,7 @@ namespace dungeonsanddragons.Profiles
             CreateMap<CreateSkillDTO, CharacterSkill>();
             CreateMap<UpdateSkillDTO, CharacterSkill>();
             CreateMap<CharacterSkill, UpdateSkillDTO>();
+            CreateMap<CharacterSkill, ReadSkillDTO>();
         }
     }
 }

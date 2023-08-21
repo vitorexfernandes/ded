@@ -123,3 +123,5 @@ C:\Users\vitor\OneDrive\Documentos\Vthor\Projetos\ded\dungeonsanddragons\bin\Deb
 C:\Users\vitor\OneDrive\Documentos\Vthor\Projetos\ded\dungeonsanddragons\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\vitor\OneDrive\Documentos\Vthor\Projetos\ded\dungeonsanddragons\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\vitor\OneDrive\Documentos\Vthor\Projetos\ded\dungeonsanddragons\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\vitor\OneDrive\Documentos\Vthor\Projetos\ded\dungeonsanddragons\bin\Debug\net6.0\dungeonsanddragons.xml
+C:\Users\vitor\OneDrive\Documentos\Vthor\Projetos\ded\dungeonsanddragons\obj\Debug\net6.0\dungeonsanddragons.xml
