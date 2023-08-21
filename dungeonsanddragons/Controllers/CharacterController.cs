@@ -2,6 +2,7 @@
 using dungeonsanddragons.Data;
 using dungeonsanddragons.Data.Dtos;
 using dungeonsanddragons.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,8 @@ public class CharacterController : ControllerBase
         return CreatedAtAction(nameof(GetSkillsById),new{id = skill.Id},skill);
     }
 
+    //PUT METHODS
+    //********************************************
     [HttpPut("UpdateSkill{id}")]
     public IActionResult UpdateSkill(int Id, [FromBody] UpdateSkillDTO skillDTO)
     {
@@ -45,6 +48,26 @@ public class CharacterController : ControllerBase
         _mapper.Map(skillDTO, skillReturn);
         _skillContext.SaveChanges();
         return CreatedAtAction(nameof(GetSkillsById), new { id = skillReturn.Id }, skillReturn);
+    }
+
+    //Patch METHODS
+    //********************************************
+    [HttpPatch("UpdateSkillPatch{id}")]
+    public IActionResult UpdateSkillPatch(int Id, [FromBody] JsonPatchDocument<UpdateSkillDTO> patch)
+    {
+        var skillReturn = _skillContext.CharacterSkills.FirstOrDefault(skill => skill.Id == Id);
+        if (skillReturn == null) return NotFound();
+        var skillToUpdate = _mapper.Map<UpdateSkillDTO>(skillReturn);
+
+        patch.ApplyTo(skillToUpdate, ModelState);
+
+        if (!TryValidateModel(skillToUpdate))
+        {
+            return ValidationProblem(ModelState);
+        }
+        _mapper.Map(skillToUpdate, skillReturn);
+        _skillContext.SaveChanges();
+        return NoContent();
     }
 
     //GET METHODS
