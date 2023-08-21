@@ -9,6 +9,7 @@ namespace dungeonsanddragons.Profiles
         public CharacterSkillProfile()
         {
             CreateMap<CreateSkillDTO, CharacterSkill>();
+            CreateMap<UpdateSkillDTO, CharacterSkill>();
         }
     }
 }

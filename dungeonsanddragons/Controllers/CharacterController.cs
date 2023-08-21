@@ -13,9 +13,9 @@ namespace dungeonsanddragons.Controllers;
 [Route("[controller]")]
 public class CharacterController : ControllerBase
 {
-    private static List<Character> _characterList = new List<Character>();
-    private static int SkillId = 0;
-    private static List<CharacterClass> _classList = new List<CharacterClass>();
+    //private static List<Character> _characterList = new List<Character>();
+    //private static int SkillId = 0;
+    //private static List<CharacterClass> _classList = new List<CharacterClass>();
 
     private IMapper _mapper;
     private SkillContext _skillContext;
@@ -28,22 +28,6 @@ public class CharacterController : ControllerBase
 
     //POST METHODS
     //********************************************
-    [HttpPost("CreateCharacter")]
-    public void CreateCharacter([FromBody] Character character)
-    {
-        _characterList.Add(character);
-        Console.WriteLine(character.Id);
-        Console.WriteLine(character.Name);
-
-    }
-    [HttpPost("CreateClass")]
-    public void CreateClass([FromBody] CharacterClass Classes)
-    {
-        _classList.Add(Classes);
-        Console.WriteLine(Classes.Id);
-        Console.WriteLine(Classes.Name);
-
-    }
     [HttpPost("CreateSkill")]
     public IActionResult CreateSkill([FromBody] CreateSkillDTO skillDTO)
     {
@@ -51,6 +35,16 @@ public class CharacterController : ControllerBase
         _skillContext.CharacterSkills.Add(skill);
         _skillContext.SaveChanges();
         return CreatedAtAction(nameof(GetSkillsById),new{id = skill.Id},skill);
+    }
+
+    [HttpPut("UpdateSkill{id}")]
+    public IActionResult UpdateSkill(int Id, [FromBody] UpdateSkillDTO skillDTO)
+    {
+        var skillReturn = _skillContext.CharacterSkills.FirstOrDefault(skill => skill.Id == Id);
+        if (skillReturn == null) return NotFound();
+        _mapper.Map(skillDTO, skillReturn);
+        _skillContext.SaveChanges();
+        return CreatedAtAction(nameof(GetSkillsById), new { id = skillReturn.Id }, skillReturn);
     }
 
     //GET METHODS
@@ -68,4 +62,6 @@ public class CharacterController : ControllerBase
         if (skillReturn == null) return NotFound();
         return Ok(skillReturn);
     }
+
+
 }
