@@ -12,16 +12,12 @@ namespace dungeonsanddragons.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class CharacterController : ControllerBase
+public class SkillController : ControllerBase
 {
-    //private static List<Character> _characterList = new List<Character>();
-    //private static int SkillId = 0;
-    //private static List<CharacterClass> _classList = new List<CharacterClass>();
-
     private IMapper _mapper;
-    private SkillContext _skillContext;
+    private DDContext _skillContext;
 
-    public CharacterController(SkillContext context, IMapper mapper)
+    public SkillController(DDContext context, IMapper mapper)
     {
         _skillContext = context;
         _mapper = mapper;
@@ -33,7 +29,7 @@ public class CharacterController : ControllerBase
     /// <summary>
     /// Adds a skill to the database
     /// </summary>
-    /// <param name="skillDTO">Object with the fields needed to create a movie</param>
+    /// <param name="skillDTO">Object with the fields needed to create a skill</param>
     /// <returns>IActionResult</returns>
     /// <response code="201">If successful</response>
     [HttpPost("CreateSkill")]
@@ -51,7 +47,7 @@ public class CharacterController : ControllerBase
     /// <summary>
     /// Modify a Skill in the database
     /// </summary>
-    /// <param name="skillDTO">Object with the fields needed to update a movie</param>
+    /// <param name="skillDTO">Object with the fields needed to update a skill</param>
     /// <param name="Id">Object with the id of the skill to update</param>
     /// <returns>IActionResult</returns>
     [HttpPut("UpdateSkillById{Id}")]
@@ -69,7 +65,7 @@ public class CharacterController : ControllerBase
     /// <summary>
     /// Modify a Skill in the database
     /// </summary>
-    /// <param name="patch">Object with the fields needed to update a movie</param>
+    /// <param name="patch">Object with the fields needed to update a skill</param>
     /// <param name="Id">Object with the id of the skill to update</param>
     /// <returns>IActionResult</returns>
     [HttpPatch("UpdateSkillById{Id}")]
@@ -93,7 +89,7 @@ public class CharacterController : ControllerBase
     //GET METHODS
     //********************************************
     /// <summary>
-    /// Gets All Skills from Dtabase
+    /// Gets All Skills from database
     /// </summary>
     /// <param name="skip">Skip values in the search</param>
     /// <param name="take">Takes the requested amount of values</param>
@@ -105,7 +101,7 @@ public class CharacterController : ControllerBase
     }
 
     /// <summary>
-    /// Get a Skill by ID from Dtabase
+    /// Get a Skill by ID from database
     /// </summary>
     /// <param name="Id">Object with the id of the skill to get</param>
     /// <returns>IActionResult</returns>
@@ -121,7 +117,7 @@ public class CharacterController : ControllerBase
     //DELETE METHODS
     //********************************************
     /// <summary>
-    /// Delete a Skill from Dtabase
+    /// Delete a Skill from database
     /// </summary>
     /// <param name="Id">Object with the id of the skill to delete</param>
     /// <returns>IActionResult</returns>

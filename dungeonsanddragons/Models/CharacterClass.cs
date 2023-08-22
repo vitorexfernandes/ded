@@ -1,16 +1,18 @@
-﻿namespace dungeonsanddragons.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace dungeonsanddragons.Models
 {
     public class CharacterClass
     {
-        private static int _nextId = 1;
+        [Key]
         public int Id { get; private set; }
+        [Required(ErrorMessage = "Class Name is required")]
         public string Name { get; set; }
-        public List<CharacterSkill> Skills { get; set; } = new List<CharacterSkill>();
+        
 
 
         public CharacterClass(string name)
         {
-            Id = _nextId++;
             Name = name;
         }
     }
