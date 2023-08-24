@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<DDContext>(opts =>
+builder.Services.AddDbContext<SkillContext>(opts =>
 {
     opts.UseSqlServer(builder.Configuration.GetConnectionString("CharacterConnection"));
 });

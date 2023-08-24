@@ -4,77 +4,31 @@
         <name>dungeonsanddragons</name>
     </assembly>
     <members>
-        <member name="M:dungeonsanddragons.Controllers.ClassController.CreateClass(dungeonsanddragons.Data.Dtos.CreateClassDTO)">
-            <summary>
-            Adds a class to the database
-            </summary>
-            <param name="classDTO">Object with the fields needed to create a class</param>
-            <returns>IActionResult</returns>
-            <response code="201">If successful</response>
-        </member>
-        <member name="M:dungeonsanddragons.Controllers.ClassController.UpdateClass(System.Int32,dungeonsanddragons.Data.Dtos.UpdateClassDTO)">
-            <summary>
-            Modify a class in the database
-            </summary>
-            <param name="classDTO">Object with the fields needed to update a class</param>
-            <param name="Id">Object with the id of the class to update</param>
-            <returns>IActionResult</returns>
-        </member>
-        <member name="M:dungeonsanddragons.Controllers.ClassController.UpdateClassPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{dungeonsanddragons.Data.Dtos.UpdateClassDTO})">
-            <summary>
-            Modify a class in the database
-            </summary>
-            <param name="patch">Object with the fields needed to update a movie</param>
-            <param name="Id">Object with the id of the class to update</param>
-            <returns>IActionResult</returns>
-        </member>
-        <member name="M:dungeonsanddragons.Controllers.ClassController.GetAllClass(System.Int32,System.Int32)">
-            <summary>
-            Gets All class from Dtabase
-            </summary>
-            <param name="skip">Skip values in the search</param>
-            <param name="take">Takes the requested amount of values</param>
-            <returns>IEnumerable</returns>
-        </member>
-        <member name="M:dungeonsanddragons.Controllers.ClassController.GetClassById(System.Int32)">
-            <summary>
-            Get a Class by ID from Dtabase
-            </summary>
-            <param name="Id">Object with the id of the Class to get</param>
-            <returns>IActionResult</returns>
-        </member>
-        <member name="M:dungeonsanddragons.Controllers.ClassController.DeleteClass(System.Int32)">
-            <summary>
-            Delete a Class from Dtabase
-            </summary>
-            <param name="Id">Object with the id of the class to delete</param>
-            <returns>IActionResult</returns>
-        </member>
-        <member name="M:dungeonsanddragons.Controllers.SkillController.CreateSkill(dungeonsanddragons.Data.Dtos.CreateSkillDTO)">
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.CreateSkill(dungeonsanddragons.Data.Dtos.CreateSkillDTO)">
             <summary>
             Adds a skill to the database
             </summary>
-            <param name="skillDTO">Object with the fields needed to create a skill</param>
+            <param name="skillDTO">Object with the fields needed to create a movie</param>
             <returns>IActionResult</returns>
             <response code="201">If successful</response>
         </member>
-        <member name="M:dungeonsanddragons.Controllers.SkillController.UpdateSkill(System.Int32,dungeonsanddragons.Data.Dtos.UpdateSkillDTO)">
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.UpdateSkill(System.Int32,dungeonsanddragons.Data.Dtos.UpdateSkillDTO)">
             <summary>
             Modify a Skill in the database
             </summary>
-            <param name="skillDTO">Object with the fields needed to update a skill</param>
+            <param name="skillDTO">Object with the fields needed to update a movie</param>
             <param name="Id">Object with the id of the skill to update</param>
             <returns>IActionResult</returns>
         </member>
-        <member name="M:dungeonsanddragons.Controllers.SkillController.UpdateSkillPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{dungeonsanddragons.Data.Dtos.UpdateSkillDTO})">
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.UpdateSkillPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{dungeonsanddragons.Data.Dtos.UpdateSkillDTO})">
             <summary>
             Modify a Skill in the database
             </summary>
-            <param name="patch">Object with the fields needed to update a skill</param>
+            <param name="patch">Object with the fields needed to update a movie</param>
             <param name="Id">Object with the id of the skill to update</param>
             <returns>IActionResult</returns>
         </member>
-        <member name="M:dungeonsanddragons.Controllers.SkillController.GetAllSkills(System.Int32,System.Int32)">
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.GetAllSkills(System.Int32,System.Int32)">
             <summary>
             Gets All Skills from Dtabase
             </summary>
@@ -82,14 +36,14 @@
             <param name="take">Takes the requested amount of values</param>
             <returns>IEnumerable</returns>
         </member>
-        <member name="M:dungeonsanddragons.Controllers.SkillController.GetSkillById(System.Int32)">
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.GetSkillById(System.Int32)">
             <summary>
             Get a Skill by ID from Dtabase
             </summary>
             <param name="Id">Object with the id of the skill to get</param>
             <returns>IActionResult</returns>
         </member>
-        <member name="M:dungeonsanddragons.Controllers.SkillController.DeleteSkill(System.Int32)">
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.DeleteSkill(System.Int32)">
             <summary>
             Delete a Skill from Dtabase
             </summary>
