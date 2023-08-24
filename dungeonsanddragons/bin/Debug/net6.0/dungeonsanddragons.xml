@@ -30,7 +30,7 @@
         </member>
         <member name="M:dungeonsanddragons.Controllers.ClassController.GetAllClass(System.Int32,System.Int32)">
             <summary>
-            Gets All Class from Dtabase
+            Gets All Class from database
             </summary>
             <param name="skip">Skip values in the search</param>
             <param name="take">Takes the requested amount of values</param>
@@ -38,16 +38,16 @@
         </member>
         <member name="M:dungeonsanddragons.Controllers.ClassController.GetClassById(System.Int32)">
             <summary>
-            Get a Class by ID from Dtabase
+            Get a Class by ID from database
             </summary>
             <param name="Id">Object with the id of the Class to get</param>
             <returns>IActionResult</returns>
         </member>
         <member name="M:dungeonsanddragons.Controllers.ClassController.DeleteSkill(System.Int32)">
             <summary>
-            Delete a Skill from Dtabase
+            Delete a Class from database
             </summary>
-            <param name="Id">Object with the id of the skill to delete</param>
+            <param name="Id">Object with the id of the Class to delete</param>
             <returns>IActionResult</returns>
         </member>
         <member name="M:dungeonsanddragons.Controllers.SkillController.CreateSkill(dungeonsanddragons.Data.Dtos.CreateSkillDTO)">
@@ -106,6 +106,18 @@
             <inheritdoc />
         </member>
         <member name="M:dungeonsanddragons.Migrations.CriandoTabelaSkills.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:dungeonsanddragons.Migrations.CriandoTabelaClass">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CriandoTabelaClass.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CriandoTabelaClass.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CriandoTabelaClass.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>
