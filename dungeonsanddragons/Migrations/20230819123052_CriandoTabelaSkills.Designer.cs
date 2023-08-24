@@ -10,7 +10,7 @@ using dungeonsanddragons.Data;
 
 namespace dungeonsanddragons.Migrations
 {
-    [DbContext(typeof(SkillContext))]
+    [DbContext(typeof(Context))]
     [Migration("20230819123052_CriandoTabelaSkills")]
     partial class CriandoTabelaSkills
     {

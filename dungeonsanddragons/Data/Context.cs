@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dungeonsanddragons.Data
 {
-    public class SkillContext : DbContext
+    public class Context : DbContext
     {
         public DbSet<CharacterSkill> CharacterSkills{ get; set; }
+        public DbSet<CharacterClass> CharacterClasses { get; set; }
 
-        public SkillContext(DbContextOptions<SkillContext> opts)
+        public Context(DbContextOptions<Context> opts)
             : base(opts)
         {
                 

@@ -9,7 +9,7 @@ using dungeonsanddragons.Data;
 
 namespace dungeonsanddragons.Migrations
 {
-    [DbContext(typeof(SkillContext))]
+    [DbContext(typeof(Context))]
     partial class SkillContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -2,7 +2,7 @@
 
 namespace dungeonsanddragons.Data.Dtos;
 
-public class UpdateSkillDTO
+public class UpdateClassDTO
 {
     [Required(ErrorMessage = "Class Name is required")]
     public string Name{ get; set; }
