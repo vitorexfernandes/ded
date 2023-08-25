@@ -66,6 +66,14 @@
             <param name="Id">Object with the id of the skill to update</param>
             <returns>IActionResult</returns>
         </member>
+        <member name="M:dungeonsanddragons.Controllers.SkillController.UpdateSkillValue(dungeonsanddragons.Data.Dtos.UpdateSkillValueDTO)">
+            <summary>
+            Modify a value Skill in the database
+            </summary>
+            <param name="skillDTO">Object with the fields needed to update a skill</param>
+            <param name="Id">Object with the id of the skill to update</param>
+            <returns>IActionResult</returns>
+        </member>
         <member name="M:dungeonsanddragons.Controllers.SkillController.UpdateSkillPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{dungeonsanddragons.Data.Dtos.UpdateSkillDTO})">
             <summary>
             Modify a Skill in the database
@@ -118,6 +126,18 @@
             <inheritdoc />
         </member>
         <member name="M:dungeonsanddragons.Migrations.CriandoTabelaClass.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:dungeonsanddragons.Migrations.CriandoTabelaClassxSkill">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CriandoTabelaClassxSkill.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CriandoTabelaClassxSkill.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CriandoTabelaClassxSkill.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

@@ -39,6 +39,16 @@ public class ClassController : ControllerBase
     {
         CharacterClass characterclassReturn = _mapper.Map<CharacterClass>(classDTO);
         _classContext.CharacterClasses.Add(characterclassReturn);
+        // Criar entradas na tabela intermediária para todas as skills com valor padrão (0)
+        foreach (var characterSkill in _classContext.CharacterSkills)
+        {
+            _classContext.CharacterClassxSkill.Add(new CharacterClassxSkill
+            {
+                CharacterSkill = characterSkill,
+                CharacterClass = characterclassReturn,
+                Value = 0
+            });
+        }
         _classContext.SaveChanges();
         return CreatedAtAction(nameof(GetClassById), new { id = characterclassReturn.Id }, characterclassReturn);
     }

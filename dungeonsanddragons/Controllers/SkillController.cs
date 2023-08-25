@@ -42,6 +42,16 @@ public class SkillController : ControllerBase
     {
         CharacterSkill skill = _mapper.Map<CharacterSkill>(skillDTO);
         _skillContext.CharacterSkills.Add(skill);
+        // Criar entradas na tabela intermediária para todas as classes com valor padrão (0)
+        foreach (var characterClass in _skillContext.CharacterClasses)
+        {
+            _skillContext.CharacterClassxSkill.Add(new CharacterClassxSkill
+            {
+                CharacterSkill = skill,
+                CharacterClass = characterClass,
+                Value = 0
+            });
+        }
         _skillContext.SaveChanges();
         return CreatedAtAction(nameof(GetSkillById), new { id = skill.Id }, skill);
     }
@@ -63,6 +73,49 @@ public class SkillController : ControllerBase
         _skillContext.SaveChanges();
         return CreatedAtAction(nameof(GetSkillById), new { id = skillReturn.Id }, skillReturn);
     }
+
+    /// <summary>
+    /// Modify a value Skill in the database
+    /// </summary>
+    /// <param name="skillDTO">Object with the fields needed to update a skill</param>
+    /// <param name="Id">Object with the id of the skill to update</param>
+    /// <returns>IActionResult</returns>
+    [HttpPatch("UpdateSkillValue")]
+    public IActionResult UpdateSkillValue([FromBody] UpdateSkillValueDTO updateDTO)
+    {
+            var skill = _skillContext.CharacterSkills.FirstOrDefault(s => s.Name == updateDTO.SkillName);
+            var characterClass = _skillContext.CharacterClasses.FirstOrDefault(c => c.Name == updateDTO.ClassName);
+
+            if (skill == null || characterClass == null)
+            {
+                return NotFound("Skill or class not found.");
+            }
+
+            var classSkill = _skillContext.CharacterClassxSkill.FirstOrDefault(cs =>
+                cs.CharacterSkillId == skill.Id && cs.CharacterClassId == characterClass.Id);
+
+            if (classSkill == null)
+            {
+                // Skill not associated with the specified class, create the association
+                classSkill = new CharacterClassxSkill
+                {
+                    CharacterSkill = skill,
+                    CharacterClass = characterClass,
+                    Value = updateDTO.NewValue
+                };
+                _skillContext.CharacterClassxSkill.Add(classSkill);
+            }
+            else
+            {
+                classSkill.Value = updateDTO.NewValue;
+            }
+
+            _skillContext.SaveChanges();
+
+            return NoContent();
+
+    }
+
 
     //Patch METHODS
     //********************************************

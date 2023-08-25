@@ -8,6 +8,7 @@ namespace dungeonsanddragons.Data
     {
         public DbSet<CharacterSkill> CharacterSkills{ get; set; }
         public DbSet<CharacterClass> CharacterClasses { get; set; }
+        public DbSet<CharacterClassxSkill> CharacterClassxSkill { get; set; }
 
         public Context(DbContextOptions<Context> opts)
             : base(opts)
