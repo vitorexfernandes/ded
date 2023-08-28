@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using dungeonsanddragons.Data;
 
@@ -10,9 +11,11 @@ using dungeonsanddragons.Data;
 namespace dungeonsanddragons.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class SkillContextModelSnapshot : ModelSnapshot
+    [Migration("20230828130309_CorrecaoCharacter")]
+    partial class CorrecaoCharacter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,19 +110,15 @@ namespace dungeonsanddragons.Migrations
                 });
 
             modelBuilder.Entity("dungeonsanddragons.Models.Character", b =>
-            {
-                b.Property<int>("Id")
-                    .ValueGeneratedOnAdd() // Assuming Id is auto-generated
-                    .HasColumnType("int");
+                {
+                    b.HasOne("dungeonsanddragons.Models.CharacterClass", "CharacterClass")
+                        .WithMany("Characters")
+                        .HasForeignKey("CharacterClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                b.Property<string>("Name")
-                    .IsRequired()
-                    .HasColumnType("nvarchar(max)");
-
-                b.HasKey("Id"); // Use Id as the primary key
-
-                b.ToTable("Character");
-            });
+                    b.Navigation("CharacterClass");
+                });
 
             modelBuilder.Entity("dungeonsanddragons.Models.CharacterClassxSkill", b =>
                 {

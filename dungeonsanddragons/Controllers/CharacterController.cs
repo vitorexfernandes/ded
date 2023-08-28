@@ -37,9 +37,15 @@ public class CharacterController : ControllerBase
     public IActionResult CreateCharacter([FromBody] CreateCharacterDTO characterDTO)
     {
         Character _character = _mapper.Map<Character>(characterDTO);
+        var characterclassReturn = _characterContext.CharacterClasses.FirstOrDefault(characterclassReturn => characterclassReturn.Id == _character.CharacterClassId);
+        if (characterclassReturn == null) {
+            return NotFound("Class not found.");
+        }
+        _character.CharacterClass = characterclassReturn;
         _characterContext.Character.Add(_character);
         _characterContext.SaveChanges();
         return CreatedAtAction(nameof(GetCharacterById), new { id = _character.Id }, _character);
+
     }
 
     //PUT METHODS
