@@ -1,17 +1,18 @@
-﻿namespace dungeonsanddragons.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace dungeonsanddragons.Models
 {
     public class Character
     {
-        private static int _nextId = 1;
-        public int Id { get;  private set; }
+        [Key]
+        public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
-        public CharacterClass CharacterClass { get; set; }  // Referência à classe CharacterClass
+        [Required]
+        public int CharacterClassId { get; set; }
 
-        public Character(string name, CharacterClass characterClass)
+        public Character()
         {
-            Id = _nextId++;
-            Name = name;
-            CharacterClass = characterClass;
         }
 
     }

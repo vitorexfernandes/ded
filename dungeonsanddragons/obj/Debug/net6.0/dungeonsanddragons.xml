@@ -4,6 +4,52 @@
         <name>dungeonsanddragons</name>
     </assembly>
     <members>
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.CreateCharacter(dungeonsanddragons.Data.Dtos.CreateCharacterDTO)">
+            <summary>
+            Adds a character to the database
+            </summary>
+            <param name="characterDTO">Object with the fields needed to create a character</param>
+            <returns>IActionResult</returns>
+            <response code="201">If successful</response>
+        </member>
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.UpdateCharacter(System.Int32,dungeonsanddragons.Data.Dtos.UpdateCharacterDTO)">
+            <summary>
+            Modify a character in the database
+            </summary>
+            <param name="characterDTO">Object with the fields needed to update a character</param>
+            <param name="Id">Object with the id of the character to update</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.UpdateCharacterPatch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{dungeonsanddragons.Data.Dtos.UpdateCharacterDTO})">
+            <summary>
+            Modify a character in the database
+            </summary>
+            <param name="patch">Object with the fields needed to update a character</param>
+            <param name="Id">Object with the id of the character to update</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.GetAllCharacter(System.Int32,System.Int32)">
+            <summary>
+            Gets All character from database
+            </summary>
+            <param name="skip">Skip values in the search</param>
+            <param name="take">Takes the requested amount of values</param>
+            <returns>IEnumerable</returns>
+        </member>
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.GetCharacterById(System.Int32)">
+            <summary>
+            Get a character by ID from database
+            </summary>
+            <param name="Id">Object with the id of the character to get</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:dungeonsanddragons.Controllers.CharacterController.DeleteCharacter(System.Int32)">
+            <summary>
+            Delete a character from database
+            </summary>
+            <param name="Id">Object with the id of the character to delete</param>
+            <returns>IActionResult</returns>
+        </member>
         <member name="M:dungeonsanddragons.Controllers.ClassController.CreateClass(dungeonsanddragons.Data.Dtos.CreateClassDTO)">
             <summary>
             Adds a class to the database

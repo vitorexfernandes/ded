@@ -15,6 +15,7 @@ namespace dungeonsanddragons.Models
 
 
 
+
         public CharacterClass(string name)
         {
             Name = name;
