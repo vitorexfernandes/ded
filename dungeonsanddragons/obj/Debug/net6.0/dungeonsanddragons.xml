@@ -198,5 +198,17 @@
         <member name="M:dungeonsanddragons.Migrations.CriandoTabelaCharacter.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:dungeonsanddragons.Migrations.CorrecaoTabelaCharacter">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CorrecaoTabelaCharacter.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CorrecaoTabelaCharacter.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:dungeonsanddragons.Migrations.CorrecaoTabelaCharacter.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>
