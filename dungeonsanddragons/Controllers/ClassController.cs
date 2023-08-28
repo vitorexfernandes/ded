@@ -64,7 +64,7 @@ public class ClassController : ControllerBase
     [HttpPut("UpdateClassById{Id}")]
     public IActionResult UpdateClass(int Id, [FromBody] UpdateClassDTO classDTO)
     {
-        var characterclassReturn = _classContext.CharacterSkills.FirstOrDefault(characterclassReturn => characterclassReturn.Id == Id);
+        var characterclassReturn = _classContext.CharacterClasses.FirstOrDefault(characterclassReturn => characterclassReturn.Id == Id);
         if (characterclassReturn == null) return NotFound();
         _mapper.Map(classDTO, characterclassReturn);
         _classContext.SaveChanges();
@@ -82,7 +82,7 @@ public class ClassController : ControllerBase
     [HttpPatch("UpdateClassById{Id}")]
     public IActionResult UpdateClassPatch(int Id, [FromBody] JsonPatchDocument<UpdateClassDTO> patch)
     {
-        var characterclassReturn = _classContext.CharacterSkills.FirstOrDefault(characterclassReturn => characterclassReturn.Id == Id);
+        var characterclassReturn = _classContext.CharacterClasses.FirstOrDefault(characterclassReturn => characterclassReturn.Id == Id);
         if (characterclassReturn == null) return NotFound();
         var classToUpdate = _mapper.Map<UpdateClassDTO>(characterclassReturn);
 

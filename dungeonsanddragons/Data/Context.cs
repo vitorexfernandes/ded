@@ -16,5 +16,13 @@ namespace dungeonsanddragons.Data
         {
                 
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<CharacterClass>()
+                .HasMany(characterClass => characterClass.Characters)
+                .WithOne(character => character.CharacterClass)
+                .HasForeignKey(character => character.CharacterClassId);
+        }
     }
 }
