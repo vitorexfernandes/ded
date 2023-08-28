@@ -10,7 +10,6 @@ namespace dungeonsanddragons.Models
         public string Name { get; set; }
         [Required]
         public int CharacterClassId { get; set; }
-        public virtual CharacterClass CharacterClass { get; set; }
 
         public Character()
         {
